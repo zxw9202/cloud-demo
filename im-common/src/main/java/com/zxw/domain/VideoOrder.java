@@ -56,5 +56,7 @@ public class VideoOrder implements Serializable {
     @ApiModelProperty(value = "用户id")
     private Integer userId;
 
+    @ApiModelProperty(value = "服务信息")
+    private String serviceInfo;
 
 }

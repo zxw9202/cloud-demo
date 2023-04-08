@@ -50,5 +50,6 @@ public class Video implements Serializable {
     @ApiModelProperty(value = "默认8.7，最高10分")
     private Double point;
 
-
+    @ApiModelProperty(value = "服务信息")
+    private String serviceInfo;
 }
