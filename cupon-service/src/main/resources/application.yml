@@ -1,11 +1,11 @@
 server:
-  port: 7000
+  port: 9002
 spring:
   application:
-    name: user-service
+    name: cupon-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.190.30.196:3306/cloud_user?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://10.190.30.196:3306/cloud_cupon?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456
   cloud:
@@ -14,11 +14,22 @@ spring:
         server-addr: 10.190.30.196:8848
   main:
     allow-bean-definition-overriding: true
+
 # 控制台输出sql、下划线转驼峰
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**/*.xml
+  mapper-locations: classpath*:/mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-  type-aliases-package: com.zxw.**.entity
+  type-aliases-package: com.zxw.entity
 
+
+
+#seata配置
+seata:
+  tx-service-group: cupon-service-group
+  service:
+    grouplists:
+      zxw: 10.190.30.196:8091
+    vgroup-msapping:
+      cupon-service-group: zxw

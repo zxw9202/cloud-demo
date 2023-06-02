@@ -12,8 +12,23 @@ spring:
     nacos:
       discovery:
         server-addr: 10.190.30.196:8848
+  feign:
+    client:
+      config:
+        default:
+          connectTimeout: 300000
+          readTimeout: 600000
 # 控制台输出sql、下划线转驼峰
-mybatis:
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+
+
+mybatis-plus:
+  mapper-locations: mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+  type-aliases-package: com.example.demo.entity
+
