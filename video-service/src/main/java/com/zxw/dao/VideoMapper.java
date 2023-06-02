@@ -1,7 +1,6 @@
 package com.zxw.dao;
 
-import com.zxw.domain.Video;
-import org.apache.ibatis.annotations.Mapper;
+import com.zxw.entity.Video;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.zxw.service;
 
-import com.zxw.domain.Video;
+import com.zxw.entity.Video;
 
 public interface VideoService {
 

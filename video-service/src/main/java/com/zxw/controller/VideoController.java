@@ -1,6 +1,6 @@
 package com.zxw.controller;
 
-import com.zxw.domain.Video;
+import com.zxw.entity.Video;
 import com.zxw.service.VideoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,7 +21,7 @@ public class VideoController {
 
     @GetMapping("findById")
     @ApiOperation("根据id查询视频信息")
-    public Object findById(int videoId, HttpServletRequest request){
+    public Video findById(int videoId, HttpServletRequest request){
         Video video = videoService.findById(videoId);
         video.setServiceInfo(request.getServerName()+":"+request.getServerPort());
         return video;

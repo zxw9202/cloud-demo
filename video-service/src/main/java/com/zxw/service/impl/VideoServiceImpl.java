@@ -1,7 +1,7 @@
 package com.zxw.service.impl;
 
 import com.zxw.dao.VideoMapper;
-import com.zxw.domain.Video;
+import com.zxw.entity.Video;
 import com.zxw.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,7 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public Video findById(int videoId) {
-        return videoMapper.findById(videoId);
+        Video video =  videoMapper.findById(videoId);
+        return video;
     }
 }

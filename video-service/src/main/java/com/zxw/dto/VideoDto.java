@@ -1,8 +1,9 @@
-package com.zxw.domain;
+package com.zxw.dto;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.zxw.entity.PageEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -25,7 +26,7 @@ import java.util.Date;
 @Accessors(chain = true)
 @TableName("video")
 @ApiModel(value="Video对象", description="")
-public class Video implements Serializable {
+public class VideoDto extends PageEntity {
 
     private static final long serialVersionUID=1L;
 

@@ -1,8 +1,11 @@
 package com.zxw.service;
 
-import com.zxw.domain.VideoOrder;
+import com.zxw.entity.VideoOrder;
+
+import java.util.List;
 
 public interface OrderService {
 
     void save(VideoOrder videoOrder);
+
 }

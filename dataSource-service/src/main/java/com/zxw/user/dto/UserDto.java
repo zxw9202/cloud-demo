@@ -1,30 +1,26 @@
-package com.zxw.domain;
+package com.zxw.user.dto;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
+import com.zxw.entity.PageEntity;
+import com.zxw.user.entity.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.beans.BeanUtils;
 
-import java.io.Serializable;
 import java.util.Date;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author issuser
- * @since 2023-04-05
- */
+
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 @TableName("user")
 @ApiModel(value="User对象", description="")
-public class User implements Serializable {
+public class UserDto extends PageEntity {
 
     private static final long serialVersionUID=1L;
 
@@ -49,4 +45,9 @@ public class User implements Serializable {
     private String wechat;
 
 
+    public static UserDto  transfromBeanToDto(User user) {
+        UserDto dto = new UserDto();
+        BeanUtils.copyProperties(user,dto);
+        return dto;
+    }
 }
